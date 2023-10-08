@@ -14,7 +14,7 @@ function validateForm()
  }
 
  let b = document.forms["myForm"]["email"].value;
- let regEmail = /^[A-Za-z0-9]+@+[a-z]+\.[a-z]{2,3}$/;
+ let regEmail = /^[A-Za-z0-9]+@+[a-z]+\.[a-z]{3}$/;
  if(b == "")
  {
  alert("Email must be filled out");

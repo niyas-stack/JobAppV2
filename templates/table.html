@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Applciants List</title>
+    <title>Documents</title>
     <link rel="stylesheet" href="{{url_for('static',filename= 'table.css')}}"/>
 </head>
 <header>
@@ -29,13 +29,13 @@
         <option value="5">HR executive</option>
 
     </select>
-    <input type="submit" value="Search">
+    <input type="submit">
     <button type="reset" onclick="location.href = '/admin';">Clear Search</button>
 </form>
-<div class="str">
-    <table class="scrolldown" id="myTable">
+<div id="tablecontainer">
+    <table id="myTable">
         <thead>
-        <tr>
+        <tr class="header">
             <th>Registration Number</th>
             <th>Applicant Name</th>
             <th>Applicant Email</th>

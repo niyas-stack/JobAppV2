@@ -6,7 +6,7 @@ function validate() {
  return false;
  }
  else{
- let regEmail = /^[a-z0-9]+@+[a-z]+\.[a-z]{2,3}$/;
+ let regEmail = /^[a-z0-9]+@+[a-z]+\.[a-z]{3}$/;
  let result3 = regEmail.test(email);
  if(!result3){
  alert("Invalid mail id.")
