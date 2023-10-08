@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='home.css')}}">
+    <style>
+        body {
+            background-image: url({{url_for('static', filename='3.jpg')}});
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="col-md-8">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        {% for category, message in messages %}
+        <div class="alert alert-{{ category }}">
+            {{ message }}
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </div>
+    <div class="home">
+        <h1>Job Application Portal</h1>
+        <div class="btn-container">
+            <a href="{{url_for('application')}}" class="btn btn-apply">Apply for Job</a>
+            <a href="{{url_for('login')}}" class="btn btn-login">Admin Login</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

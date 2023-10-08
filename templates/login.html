@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Login page </title>
+    <link rel="stylesheet" href="{{url_for('static',filename= 'login.css')}}"/>
+    <style>
+        body {
+        background-image: url({{url_for('static',filename='3.jpg')}});
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        }
+    </style>
+</head>
+<header>
+    <div class="home">
+        <a href="{{url_for('home')}}">Home </a>
+    </div>
+</header>
+<body>
+<div class="col-md-8">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    {% for category, message in messages %}
+    <div class="alert alert-{{ category }}">
+        {{ message }}
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+</div>
+<div class="start">
+    <div class="head">
+        <h1 class="head">ADMIN LOGIN </h1>
+    </div>
+    <div class="form-container">
+        <form name="myForm" action="/login" method="POST" onsubmit="return(validate());">
+            <div class="input">
+                <label>Email</label>
+                <input type="text" name="email" placeholder="Enter email abc@gmail.com" maxlength="35"><br><br>
+                <label>Password</label>
+                <input type="password" name="password" placeholder="Enter password"><br><br>
+            </div>
+            <input type="submit" value="login"><br><br>
+        </form>
+    </div>
+</div>
+<script src="{{url_for('static',filename='login.js')}}"></script>
+</body>
+</html>

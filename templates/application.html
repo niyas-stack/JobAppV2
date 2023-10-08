@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Application Form </title>
+	<link rel="stylesheet" href="{{url_for('static',filename= 'application.css')}}"/>
+	<style>
+		body {
+		background-image: url({{url_for('static',filename='3.jpg')}});
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-size: cover;
+		}
+	</style>
+</head>
+<header>
+ <div class="home">
+ <a href="{{url_for('home')}}">Home </a>
+ </div>
+ </header>
+<body>
+<div class="col-md-8">
+	{% with messages = get_flashed_messages(with_categories=true) %}
+	{% if messages %}
+	{% for category, message in messages %}
+	<div class="alert alert-{{ category }}">
+		{{ message }}
+	</div>
+	{% endfor %}
+	{% endif %}
+	{% endwith %}
+	{% block content %}{% endblock %}
+</div>
+<div class="start">
+	<div class="head">
+		<h1 class="head">JOB APPLICATION FORM </h1>
+	</div>
+	<div class="form-container">
+		<form name="myForm" action="" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
+			<div class="input">
+				<label>Applicant Name</label>
+				<input type="text" name="name" placeholder="Enter full name" maxlength="35"><br><br>
+				<label>Email</label>
+				<input type="text" name="email" placeholder="Enter email abc@gmail.com"><br><br>
+				<label>Position</label>
+				<select id="position" name="position" style="width:216px;height:34px;" required>
+					{% for position in positions %}
+					<option value="{{position[0]}}">{{ position[1]}}</option>
+					{% endfor %}
+				</select><br><br>
+				<label for="resume">Resume(pdf/docx)</label>
+
+				<input type="file" id="resume" name="resume" accept=".pdf,.docx"><br><br>
+			</div>
+			<input type="submit" value="Submit"><br><br>
+		</form>
+		{% if registration_number %}
+		<p>Registration Number: {{ registration_number }}</p>
+		{% endif %}
+	</div>
+</div>
+<script src="{{url_for('static',filename='application.js')}}"></script>
+</body>
+</html>
+

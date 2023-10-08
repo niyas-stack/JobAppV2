@@ -1,0 +1,93 @@
+.start{
+ display:flex;
+ justify-content: center;
+ align-items: center;
+ height:100vh;
+ margin:0;
+}
+
+.home{
+text-align:right
+}
+
+.head{
+color:black;
+margin-bottom:244px;
+}
+
+
+.form-container{
+ background-color:white;
+ width: 700px;
+ margin:0 auto;
+ padding:20px;
+ align-items:center;
+ border:1px;
+ border-radius:30px;
+ text-align: center;
+ position:absolute;
+ height:300px;
+
+}
+
+
+.input{
+ margin-bottom:15px;
+ margin-right: 15px;
+
+}
+
+.input label{
+ display: flex;
+ font-weight: bold;
+ margin-bottom: 5px;
+ font-size: 22px;
+}
+
+.input input[type="text"]{
+ width:98%;
+ padding:10px;
+ border:1px solid black;
+ border-radius: 3px;
+}
+.input input[type="password"]{
+ width:98%;
+ padding:10px;
+ border:1px solid black;
+ border-radius: 3px;
+}
+.form-container input[type="submit"]{
+width:30%;
+height:50%
+}
+
+form{
+ margin-top:20px;
+}
+
+a:link, a:visited {
+ background-color:azure;
+ color: black;
+ padding: 15px 25px;
+ text-align: center;
+ text-decoration: none;
+ font-size: 25px;
+ display: inline-block;
+ font-weight: bold;
+ }
+
+ a:hover, a:active {
+ background-color:beige;
+ }
+ .alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-size: 20px;
+}
+ .alert-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border-color: #f5c6cb;
+}
