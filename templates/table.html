@@ -1,60 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <title>Documents</title>
- <link rel="stylesheet" href="{{url_for('static',filename= 'table.css')}}"/>
+    <title>Documents</title>
+    <link rel="stylesheet" href="{{url_for('static',filename= 'table.css')}}"/>
 </head>
 <header>
- <div class="header-content">
- <div class="home">
- <a href="{{ url_for('logout') }}">Logout</a>
- </div>
- <div class="home">
- <a href="{{ url_for('home') }}">Home</a>
- </div>
- </div>
+    <div class="header-content">
+        <div class="home">
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </div>
+        <div class="home">
+            <a href="{{ url_for('home') }}">Home</a>
+        </div>
+    </div>
 </header>
 <body>
 <h1>LIST OF APPLICANTS</h1>
 <form method="GET" action="">
- <input type="text" id="searchInput" name ="search" onkeyup="filterTable()"
- placeholder="Search for Application number, Name, Email, or Applied pos.." title="Type to search">
+    <input type="text" id="searchInput" name ="search" onkeyup="filterTable()"
+           placeholder="Search for Application number, Name, Email, or Applied pos.." title="Type to search">
 
- <select id="positionDropdown" name="filter" onchange="filterByPosition()">
- <option value="">Select position</option>
- <option value="1">Manager</option>
- <option value="2">Developer</option>
- <option value="3">Tester</option>
- <option value="4">Accountant</option>
- <option value="5">HR executive</option>
+    <select id="positionDropdown" name="filter" onchange="filterByPosition()">
+        <option value="">Select position</option>
+        <option value="1">Manager</option>
+        <option value="2">Developer</option>
+        <option value="3">Tester</option>
+        <option value="4">Accountant</option>
+        <option value="5">HR executive</option>
 
- </select>
- <input type="submit">
- <button type="reset" onclick="location.href = '/admin';">Clear Search</button>
+    </select>
+    <input type="submit" value="Search">
+    <button type="reset" onclick="location.href = '/admin';">Clear Search</button>
 </form>
-<div id="tablecontainer">
- <table id="myTable">
- <thead>
- <tr class="header">
- <th>Registration Number</th>
- <th>Applicant Name</th>
- <th>Applicant Email</th>
- <th>Applied Position</th>
- <th>Resume</th>
- </tr>
- {% for row in formated_data %}
- </thead>
- <tbody>
- <tr>
- <td>{{row[0]}}</td>
- <td>{{row[1]}}</td>
- <td>{{row[2]}}</td>
- <td><span class="position-chip">{{row[3]}}</span></td>
- <td><a href="{{row[5]}}">Download Resume</a></td>
- </tr>
- {% endfor %}
- </tbody>
- </table>
+<div class="str">
+    <table class="scrolldown" id="myTable">
+        <thead>
+        <tr>
+            <th>Registration Number</th>
+            <th>Applicant Name</th>
+            <th>Applicant Email</th>
+            <th>Applied Position</th>
+            <th>Resume</th>
+        </tr>
+        {% for row in formated_data %}
+        </thead>
+        <tbody>
+        <tr>
+            <td>{{row[0]}}</td>
+            <td>{{row[1]}}</td>
+            <td>{{row[2]}}</td>
+            <td><span class="position-chip">{{row[3]}}</span></td>
+            <td><a href="{{row[5]}}">Download Resume</a></td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 </div>
 
 </body>

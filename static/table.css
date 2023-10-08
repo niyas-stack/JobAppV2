@@ -1,168 +1,154 @@
+/* Reset CSS */
 * {
- box-sizing: border-box;
- margin: 0;
- padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 /* Global Styles */
 body {
- font-family: Arial, sans-serif;
- background-color: #f2f2f2;
- margin: 0;
- padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
 }
 
 /* Header Styles */
 header {
- padding: 10px 0;
- text-align: right;
+    padding: 10px 0;
+    text-align: right;
 }
 .header-content {
- display: flex; /* Use flexbox for horizontal alignment */
- justify-content: flex-end; /* Spacing between logout and home buttons */
- align-items: center; /* Center vertically within the header */
- gap: 20px
+    display: flex; /* Use flexbox for horizontal alignment */
+    justify-content: flex-end; /* Spacing between logout and home buttons */
+    align-items: center; /* Center vertically within the header */
+    gap: 20px
 }
 .home {
- display: inline-block; /* Make it a block-level element */
- background-color: #2980b9; /* Background color for the design element */
- padding: 10px 20px; /* Add padding to create a box around the link */
- border-radius: 5px; /* Rounded corners */
- margin-right: 10px; /* Space between the link and the design */
+    display: inline-block; /* Make it a block-level element */
+    background-color: #2980b9; /* Background color for the design element */
+    padding: 10px 20px; /* Add padding to create a box around the link */
+    border-radius: 5px; /* Rounded corners */
+    margin-right: 10px; /* Space between the link and the design */
 }
 .home a {
- color: white;
- text-decoration: none;
- font-weight: bold;
- font-size: 18px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
 }
 
 /* Title Styles */
 h1 {
- text-align: center;
- margin: 20px 0;
- font-size: 36px;
- color: #333;
+    text-align: center;
+    margin: 20px 0;
+    font-size: 36px;
+    color: #333;
 }
 
 /* Form Styles */
 form {
- text-align: center;
- margin-bottom: 20px;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 #searchInput {
- width: 100%;
- font-size: 16px;
- padding: 12px;
- border: 1px solid #ddd;
- margin-bottom: 12px;
- border-radius: 5px;
- outline: none;
+    width: 100%;
+    font-size: 16px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+    border-radius: 5px;
+    outline: none;
 }
  #positionDropdown {
- width: 100%;
- font-size: 16px;
- padding: 12px;
- border: 1px solid #ddd;
- margin-bottom: 12px;
- border-radius: 5px;
- outline: none;
- text-align: left;
+    width: 100%;
+    font-size: 16px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+    border-radius: 5px;
+    outline: none;
+    text-align: left;
 }
 /* Search and Clear Buttons */
 input[type="submit"], button[type="reset"] {
- color: white;
- padding: 10px 20px;
- border: none;
- border-radius: 5px;
- font-weight: bold;
- cursor: pointer;
- transition: background-color 0.3s;
- position: static
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: static
 }
 
 button[type="reset"], input[type="submit"] {
- background-color: #e74c3c;
- margin-left: 10px;
+    background-color: #e74c3c;
+    margin-left: 10px;
 }
 
 input[type="submit"]:hover, button[type="reset"]:hover {
- background-color: #2980b9;
+    background-color: #2980b9;
 }
 
 /* Table Styles */
 table {
- border-collapse: collapse;
- width: 100%;
- font-size: 18px;
- background-color: #fff;
- border-radius: 5px;
- box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 18px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 table th, table td {
- text-align: center;
- padding: 15px;
+    text-align: center;
+    padding: 15px;
 }
 
 table th {
- background-color: #f1f1f1;
- font-weight: bold;
+    background-color: #f1f1f1;
+    font-weight: bold;
 }
 
 table tr {
- border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
 }
 
 table tr:hover {
- background-color: #f1f1f1;
+    background-color: #f1f1f1;
 }
 
 /* Resume Link Styles */
 .resume-link {
- text-decoration: none;
- color: #3498db;
- font-weight: bold;
+    text-decoration: none;
+    color: #3498db;
+    font-weight: bold;
 }
 
 .resume-link:hover {
- text-decoration: underline;
+    text-decoration: underline;
 }
 
 
 
 .home:hover {
- background-color: #c0392b;
+    background-color: #c0392b;
 }
 
 .position-chip {
- padding: 5px 10px;
- background-color: #3498db;
- color: white;
- border-radius: 20px;
- margin-right: 10px; /* Add spacing between chips */
- font-weight: bold;
- font-size: 17px;
- cursor: pointer;
- transition: background-color 0.3s;
+    padding: 5px 10px;
+    background-color: #3498db;
+    color: white;
+    border-radius: 20px;
+    margin-right: 10px; /* Add spacing between chips */
+    font-weight: bold;
+    font-size: 17px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 .position-chip:hover {
- background-color: #2980b9;
-}
-#tableContainer {
- height: 400px;
- overflow-y: scroll;
-}
-#myTable {
- border-collapse: collapse;
- width: 100%;
- font-size: 18px;
-}
-#myTable tr.header{
- background-color: #f1f1f1;
- position: sticky;
- top:0;
- z-index: 1;
+    background-color: #2980b9;
 }
