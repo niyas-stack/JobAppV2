@@ -71,6 +71,7 @@ def login():
         return render_template('login.html')
     else:
         email = request.form.get('email')
+        email = email.lower()
         password = request.form.get('password')
         cursor.execute(f"SELECT * FROM jobApplication.Admin WHERE email = '{email}';")
         user = cursor.fetchone()
