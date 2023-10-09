@@ -31,7 +31,7 @@ def get_position_name(position_id):
 @app.route('/admin', methods=['GET'])
 def admin():
     if 'email' not in session:
-        return "404 Not Found"
+        return redirect(url_for('login'))
     search = request.args.get('search')
     position_filter = request.args.get('filter')
     sql = "SELECT * FROM jobApplication.applicant"
@@ -67,6 +67,8 @@ def logout():
 
 @app.route("/login", methods=['POST', 'GET'])
 def login():
+    if 'email' in session:
+        return redirect(url_for('admin'))
     if request.method == 'GET':
         return render_template('login.html')
     else:
@@ -77,12 +79,12 @@ def login():
         user = cursor.fetchone()
 
         if not user:
-            flash(f'Unauthorized User', 'error')
+            flash(f'Please enter valid emailid and password', 'error')
             return redirect(url_for('login'))
         if user[2] == password:
             session['email'] = email
             return redirect(url_for('admin'))
-        flash(f'Unauthorized User', 'error')
+        flash(f'Please enter valid emailid and password', 'error')
         return redirect(url_for('login'))
 
 

@@ -6,7 +6,7 @@ function validate() {
  return false;
  }
  else{
- let regEmail = /^[a-z0-9]+@+[a-z]+\.[a-z]{3}$/;
+ let regEmail = /^[a-zA-Z0-9]+@+[A-Za-z]+\.[A-Za-z]{3}$/;
  let result3 = regEmail.test(email);
  if(!result3){
  alert("Invalid mail id.")
@@ -19,4 +19,5 @@ function validate() {
  else if (password.length<6){
  alert("Password length must be grater than or equal to 6");
  return false;
+ }
  }

@@ -12,7 +12,7 @@ text-align:right
 
 .head{
 color:black;
-margin-bottom:244px;
+margin-bottom:296px;
 }
 
 
@@ -27,6 +27,7 @@ margin-bottom:244px;
  text-align: center;
  position:absolute;
  height:300px;
+ margin-bottom:77px;
 
 }
 
@@ -56,18 +57,14 @@ margin-bottom:244px;
  border:1px solid black;
  border-radius: 3px;
 }
-.form-container input[type="submit"]{
-width:30%;
-height:50%
-}
 
 form{
  margin-top:20px;
 }
 
 a:link, a:visited {
- background-color:azure;
- color: black;
+ background-color:#3498db;
+ color: white;
  padding: 15px 25px;
  text-align: center;
  text-decoration: none;
@@ -77,7 +74,7 @@ a:link, a:visited {
  }
 
  a:hover, a:active {
- background-color:beige;
+ background-color:#2980b9;
  }
  .alert {
     padding: 15px;
@@ -90,4 +87,25 @@ a:link, a:visited {
     background-color: #f8d7da;
     color: #721c24;
     border-color: #f5c6cb;
+}
+
+input[type="submit"]{
+    color: white;
+    width:20%;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: relative;
+}
+
+input[type="submit"] {
+    background-color:#3498db;
+    margin-left: 10px;
+}
+
+input[type="submit"]:hover {
+    background-color: #2980b9;
 }
