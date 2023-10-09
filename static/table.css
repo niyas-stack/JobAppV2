@@ -95,7 +95,7 @@ input[type="submit"]:hover, button[type="reset"]:hover {
 
 /* Table Container Styles */
 #tablecontainer {
-    height: 600px;
+    height: 620px;
     overflow-y: scroll;
 }
 
