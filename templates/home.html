@@ -27,13 +27,12 @@
         {% endfor %}
         {% endif %}
         {% endwith %}
-        {% block content %}{% endblock %}
     </div>
     <div class="home">
         <h1>Job Application Portal</h1>
         <div class="btn-container">
             <a href="{{url_for('application')}}" class="btn btn-apply">Apply for Job</a>
-            <a href="{{url_for('login')}}" class="btn btn-login">Admin Login</a>
+            <a href="{{url_for('login')}}" class="btn btn-login">Admin Dashboard</a>
         </div>
     </div>
 </div>

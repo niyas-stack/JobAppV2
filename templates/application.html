@@ -3,14 +3,14 @@
 <head>
 	<title> Application Form </title>
 	<link rel="stylesheet" href="{{url_for('static',filename= 'application.css')}}"/>
-	<style>
-		body {
-		background-image: url({{url_for('static',filename='3.jpg')}});
-		background-repeat: no-repeat;
-		background-attachment: fixed;
-		background-size: cover;
-		}
-	</style>
+<!--	<style>-->
+<!--		body {-->
+<!--		background-image: url({{url_for('static',filename='3.jpg')}});-->
+<!--		background-repeat: no-repeat;-->
+<!--		background-attachment: fixed;-->
+<!--		background-size: cover;-->
+<!--		}-->
+<!--	</style>-->
 </head>
 <header>
  <div class="home">
@@ -28,7 +28,6 @@
 	{% endfor %}
 	{% endif %}
 	{% endwith %}
-	{% block content %}{% endblock %}
 </div>
 <div class="start">
 	<div class="head">

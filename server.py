@@ -31,6 +31,7 @@ def get_position_name(position_id):
 def admin():
     if 'email' not in session:
         return redirect(url_for('login'))
+    redirect(url_for('login'))
     search = request.args.get('search')
     position_filter = request.args.get('filter')
     sql = "SELECT * FROM jobApplication.applicant"
