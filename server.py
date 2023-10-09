@@ -1,10 +1,9 @@
 import os
 import random
-
 import mysql.connector
 from flask import Flask, render_template, request, flash, redirect, url_for, session, send_from_directory
 
-UPLOAD_FOLDER = '/home/mohammad.n@TA.COM/jobApplicationPortal/uploads'
+UPLOAD_FOLDER = '/home/zehra.bi@TA.COM/PycharmProjects/miniProject/JobApplication/uploads'
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '29e317c131a9eb03a8d7ad0817c281a7'
@@ -16,7 +15,7 @@ db = mysql.connector.connect(
     host="localhost",
     user="root",
     port="3306",
-    password="root@123",
+    password="12345",
     database="jobApplication"
 )
 cursor = db.cursor()
@@ -75,6 +74,7 @@ def login():
         email = request.form.get('email')
         email = email.lower()
         password = request.form.get('password')
+        #helloooo
         cursor.execute(f"SELECT * FROM jobApplication.Admin WHERE email = '{email}';")
         user = cursor.fetchone()
 
