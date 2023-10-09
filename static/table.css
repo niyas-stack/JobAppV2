@@ -48,9 +48,13 @@ form {
 }
 
 #searchInput {
+    background-image: url('search.png');
+    background-size:40px;
+    background-position: 5px 5px;
+    background-repeat: no-repeat;
     width: 95%;
     font-size: 16px;
-    padding: 12px;
+    padding: 17px 20px 12px 54px;
     border: 1px solid #ddd;
     margin-bottom: 12px;
     border-radius: 5px;
