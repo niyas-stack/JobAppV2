@@ -9,15 +9,12 @@
         <div class="home">
             <a href="{{ url_for('logout') }}">Logout</a>
         </div>
-        <div class="home">
-            <a href="{{ url_for('home') }}">Home</a>
-        </div>
     </div>
 </header>
 <body>
 <h1>LIST OF APPLICANTS</h1>
 <form method="GET" action="">
-    <input type="text" id="searchInput" name ="search" placeholder="Search for Application number, Name, Email, or Applied pos.." title="Type to search">
+    <input type="text" id="searchInput" name ="search" placeholder="Search for Application number, Name, Email, or Applied position" title="Type to search">
 
     <select id="positionDropdown" name="filter" >
         <option value="">Select position</option>
@@ -28,7 +25,7 @@
         <option value="5">HR executive</option>
 
     </select>
-    <input type="submit">
+    <input type="submit" value="Search">
     <button type="reset" onclick="location.href = '/admin';">Clear Search</button>
 </form>
 <div id="tablecontainer">

@@ -3,7 +3,7 @@ import random
 import mysql.connector
 from flask import Flask, render_template, request, flash, redirect, url_for, session, send_from_directory
 
-UPLOAD_FOLDER = '/home/zehra.bi@TA.COM/PycharmProjects/miniProject/JobApplication/uploads'
+UPLOAD_FOLDER = '/home/mohammad.n@TA.COM/jobApplicationPortal/uploads'
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '29e317c131a9eb03a8d7ad0817c281a7'
@@ -15,7 +15,7 @@ db = mysql.connector.connect(
     host="localhost",
     user="root",
     port="3306",
-    password="12345",
+    password="root@123",
     database="jobApplication"
 )
 cursor = db.cursor()
@@ -27,7 +27,7 @@ def get_position_name(position_id):
     return data[0]
 
 
-@app.route('/admin', methods=['GET'])
+@app.route('/admin')
 def admin():
     if 'email' not in session:
         return redirect(url_for('login'))
@@ -75,7 +75,6 @@ def login():
         email = request.form.get('email')
         email = email.lower()
         password = request.form.get('password')
-        #helloooo
         cursor.execute(f"SELECT * FROM jobApplication.Admin WHERE email = '{email}';")
         user = cursor.fetchone()
 
@@ -87,11 +86,6 @@ def login():
             return redirect(url_for('admin'))
         flash(f'Please enter valid emailid and password', 'error')
         return redirect(url_for('login'))
-
-
-@app.route('/uploads/<file>', methods=['GET'])
-def get_files(file):
-    return send_from_directory(app.config['UPLOAD_FOLDER'], file)
 
 
 @app.route("/application", methods=['POST', 'GET'])
@@ -136,7 +130,7 @@ def application():
 
         cursor.execute(sql)
         db.commit()
-        flash(f'Your application is success your tracking id is: {reg_number}', 'success')
+        flash(f'Application successfully submitted!! Your registration number is: {reg_number}', 'success')
         return redirect(url_for('home'))
 
 
