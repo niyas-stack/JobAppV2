@@ -1,5 +1,6 @@
 import os
 import random
+
 import mysql.connector
 from flask import Flask, render_template, request, flash, redirect, url_for, session, send_from_directory
 
@@ -27,11 +28,10 @@ def get_position_name(position_id):
     return data[0]
 
 
-@app.route('/admin')
+@app.route('/admin', methods=['GET'])
 def admin():
     if 'email' not in session:
         return redirect(url_for('login'))
-    redirect(url_for('login'))
     search = request.args.get('search')
     position_filter = request.args.get('filter')
     sql = "SELECT * FROM jobApplication.applicant"
@@ -88,6 +88,11 @@ def login():
         return redirect(url_for('login'))
 
 
+@app.route('/uploads/<file>', methods=['GET'])
+def get_files(file):
+    return send_from_directory(app.config['UPLOAD_FOLDER'], file)
+
+
 @app.route("/application", methods=['POST', 'GET'])
 def application():
     if request.method == 'GET':
@@ -130,7 +135,7 @@ def application():
 
         cursor.execute(sql)
         db.commit()
-        flash(f'Application successfully submitted!! Your registration number is: {reg_number}', 'success')
+        flash(f'Your application is success your tracking id is: {reg_number}', 'success')
         return redirect(url_for('home'))
 
 
