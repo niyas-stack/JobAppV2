@@ -102,6 +102,7 @@ def application():
     else:
         name = request.form.get('name')
         email = request.form.get('email')
+        email = email.lower()
         position = int(request.form.get('position'))
         cursor.execute(f"SELECT * FROM applicant WHERE position_id='{position}' and applicant_email = '{email}'")
         if cursor.fetchone():
